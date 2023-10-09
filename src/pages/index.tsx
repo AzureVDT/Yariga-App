@@ -14,7 +14,7 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <link rel="icon" href="./Logo.svg" />
+                <link rel="icon" href="./Favicon.svg" />
             </Head>
             <main>
                 <LayoutMain>Homepage</LayoutMain>

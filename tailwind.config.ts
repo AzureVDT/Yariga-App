@@ -9,8 +9,10 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
+                primary: "#11142d",
                 grayf4: "#f4f4f4",
                 grayfc: "#fcfcfc",
+                gray80: "#808191",
             },
             fontFamily: {
                 primary: ["Manrope"],
