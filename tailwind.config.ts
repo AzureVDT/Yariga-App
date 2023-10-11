@@ -9,13 +9,17 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: "#11142d",
+                primaryText: "#11142d",
                 grayf4: "#f4f4f4",
                 grayfc: "#fcfcfc",
                 gray80: "#808191",
+                primary: "#475BE8",
             },
             fontFamily: {
                 primary: ["Manrope"],
+            },
+            spacing: {
+                c10: "10px",
             },
         },
     },
