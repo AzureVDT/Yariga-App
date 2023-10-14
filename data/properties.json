@@ -3,11 +3,7 @@
         "id": 1,
         "title": "Metro Jayakarta Hotel & Spa",
         "address": "North Carolina, USA",
-        "info": {
-            "beds": 4,
-            "baths": 2,
-            "area": "28M"
-        },
+        "info": { "beds": 4, "baths": 2, "area": "28M" },
         "status": "sale",
         "type": "apartment",
         "price": 7500,
