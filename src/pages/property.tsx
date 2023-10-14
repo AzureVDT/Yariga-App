@@ -1,8 +1,19 @@
 import { LayoutMain } from "@/components/layout";
 import PropertyItem from "@/modules/property/PropertyItem";
+import { getProperties } from "@/store/properties.service";
+import { PropertyItemData } from "@/types/property.types";
 import React from "react";
+import { useQuery } from "react-query";
 
-const property = () => {
+const Property = () => {
+    const { data, isLoading, error } = useQuery({
+        queryKey: ["properties"],
+        queryFn: getProperties,
+        refetchOnWindowFocus: false, // khi nhấn vào window sẽ fetch lại dữ liệu
+        cacheTime: 24 * 10 * 60 * 60 * 1000, // thời gian lưu cache > stale: 1 day
+        staleTime: 24 * 5 * 60 * 60 * 1000, // thời gian lấy dữ liệu từ cache: 1/2 day
+    });
+    const properties = data;
     return (
         <LayoutMain>
             <div className="flex items-center justify-between mb-5">
@@ -20,10 +31,13 @@ const property = () => {
                     aria-label="list"
                     className="grid grid-cols-2 gap-x-16 gap-y-6 mb-9"
                 >
-                    {Array(10)
-                        .fill(0)
-                        .map((item, index) => (
-                            <PropertyItem key={index}></PropertyItem>
+                    {properties &&
+                        properties.length > 0 &&
+                        properties.map((item: PropertyItemData) => (
+                            <PropertyItem
+                                key={item.id}
+                                item={item}
+                            ></PropertyItem>
                         ))}
                 </div>
                 <div
@@ -45,4 +59,4 @@ const property = () => {
     );
 };
 
-export default property;
+export default Property;

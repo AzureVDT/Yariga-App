@@ -5,7 +5,7 @@ import { IconNotification, IconSearch } from "../icon";
 
 const Topbar = () => {
     return (
-        <div className="bg-grayfc py-4 px-5 flex items-center justify-between">
+        <div className="flex items-center justify-between px-5 py-4 bg-grayfc">
             <div className="flex items-center gap-[82px] flex-1">
                 <Link href={"/"} className="flex items-center gap-x-3">
                     <Image
@@ -13,6 +13,7 @@ const Topbar = () => {
                         alt="Yariga"
                         width={173}
                         height={35}
+                        priority
                     ></Image>
                 </Link>
                 <div
@@ -23,11 +24,11 @@ const Topbar = () => {
                     <input
                         type="text"
                         placeholder="Search Property, Customer etc"
-                        className="w-full font-normal text-xs placeholder:text-gray80"
+                        className="w-full text-xs font-normal placeholder:text-gray80"
                     />
                 </div>
             </div>
-            <div className="flex items-center gap-x-5 flex-shrink-0">
+            <div className="flex items-center flex-shrink-0 gap-x-5">
                 <span className="flex-shrink-0">
                     <IconNotification></IconNotification>
                 </span>
@@ -37,7 +38,7 @@ const Topbar = () => {
                         alt="avatar"
                         width={40}
                         height={40}
-                        className="rounded-full object-cover w-10 h-10"
+                        className="object-cover w-10 h-10 rounded-full"
                     ></Image>
                     <div className="flex flex-col">
                         <h4 className="font-semibold">Hawkins Maru</h4>
